@@ -1,0 +1,719 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GLADIO — дизайн интерьера</title>
+<link rel="icon" type="image/png" href="favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    @font-face {
+      font-family: "Montserrat ExtraLight";
+      src: url("Montserrat-ExtraLight.ttf") format("truetype");
+      font-weight: 200;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #f6f3ed;
+      color: #292822;
+      font-family: "Montserrat", sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1200px, 88%);
+      margin: auto;
+    }
+
+    /* Шапка */
+
+    header {
+      padding: 28px 0;
+      border-bottom: 1px solid #e5e0d7;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 25px;
+      letter-spacing: 5px;
+      font-weight: 600;
+    }
+
+    nav {
+      display: flex;
+      gap: 35px;
+      font-size: 12px;
+      color: #68665e;
+    }
+
+    nav a:hover {
+      color: #a17b57;
+    }
+
+    /* Главный экран */
+
+    .hero {
+      min-height: 480px;
+      display: flex;
+      align-items: center;
+      padding: 90px 0;
+    }
+
+    .hero-content {
+      max-width: 750px;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: #9b8065;
+      margin-bottom: 28px;
+    }
+
+    h1, h2 {
+      font-family: "Montserrat ExtraLight", "Montserrat", sans-serif;
+      font-weight: 200;
+    }
+
+    h1 {
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 1.15;
+      margin-bottom: 28px;
+    }
+
+    .hero p {
+      max-width: 470px;
+      color: #77736b;
+      line-height: 1.9;
+      font-size: 14px;
+    }
+
+    .hero-link {
+      display: inline-block;
+      margin-top: 35px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #9b8065;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    /* Портфолио */
+
+    .portfolio {
+      padding: 65px 0 110px;
+      border-top: 1px solid #e5e0d7;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      margin-bottom: 45px;
+      gap: 20px;
+    }
+
+    h2 {
+      font-size: clamp(32px, 4vw, 50px);
+    }
+
+    .section-description {
+      max-width: 310px;
+      color: #858077;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 48px 25px;
+    }
+
+    .project {
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .project-image {
+      overflow: hidden;
+      background: #e6e0d6;
+      aspect-ratio: 1.45 / 1;
+    }
+
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .7s ease;
+    }
+
+    .project:hover .project-image img {
+      transform: scale(1.055);
+    }
+
+    .project-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 18px;
+    }
+
+    .project h3 {
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .project-info span {
+      color: #89847a;
+      font-size: 11px;
+    }
+
+    .project-number {
+      font-size: 11px;
+      color: #a18a70;
+      margin-bottom: 8px;
+    }
+
+    /* О студии */
+
+    .about {
+      background: #eae5dc;
+      padding: 85px 0;
+    }
+
+    .about-content {
+      max-width: 650px;
+    }
+
+    .about h2 {
+      margin-bottom: 25px;
+    }
+
+    .about p {
+      color: #706c63;
+      font-size: 13px;
+      line-height: 2;
+    }
+.about h2,
+.contact-section h2 {
+  font-size: 42px;
+}
+    /* Контакты */
+    .contact-section {
+      padding: 90px 0;
+      background: #eae5dc;
+    }
+    .contact-content {
+      max-width: 700px;
+    }
+    .contact-section h2 {
+      margin-bottom: 20px;
+    }
+    .contact-description {
+      color: #706c63;
+      font-size: 13px;
+      line-height: 2;
+      max-width: 480px;
+      margin-bottom: 35px;
+    }
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .contact-links a {
+      padding: 14px 22px;
+      border: 1px solid #c9c0b3;
+      font-size: 12px;
+      color: #555148;
+      transition: .3s;
+    }
+    .contact-links a:hover {
+      background: #292822;
+      color: #f6f3ed;
+      border-color: #292822;
+    }
+
+    /* Подвал */
+
+    footer {
+      padding: 35px 0;
+      background: #292822;
+      color: #f6f3ed;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    footer p {
+      color: #aaa69d;
+      font-size: 11px;
+    }
+
+    /* Окно проекта */
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(25, 24, 21, .88);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 25px;
+      z-index: 10;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      width: min(850px, 100%);
+      background: #f6f3ed;
+      position: relative;
+      padding: 15px;
+    }
+
+    .modal-content img {
+      width: 100%;
+      max-height: 65vh;
+      object-fit: cover;
+      display: block;
+    }
+
+    .modal-text {
+      padding: 20px 5px 8px;
+    }
+
+    .modal-text h3 {
+      font-size: 19px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .modal-text p {
+      font-size: 12px;
+      color: #77736b;
+    }
+
+    .close {
+      position: absolute;
+      top: -38px;
+      right: 0;
+      color: white;
+      font-size: 30px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+#modalSize {
+  font-size: 13px;
+  color: #625f58;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+    @media (max-width: 700px) {
+      nav {
+        gap: 14px;
+        font-size: 10px;
+      }
+
+      .hero {
+        min-height: 400px;
+      }
+
+      .section-heading {
+        display: block;
+      }
+
+      .section-description {
+        margin-top: 15px;
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+      .modal-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 12px 18px;
+      border: none;
+      background: rgba(0, 0, 0, 0.25);
+      color: white;
+      font-size: 32px;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .modal-prev {
+      left: 10px;
+    }
+
+.modal-arrow:hover {
+  background: rgba(0, 0, 0, 0.65);
+}
+
+@media (max-width: 600px) {
+  .projects {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+@media (max-width: 600px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+  .hero {
+    min-height: 350px;
+    padding: 60px 0;
+  }}</style>
+
+</head>
+
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <a href="#" class="logo">GLADIO</a>
+
+      <nav>
+        <a href="#portfolio">Проекты</a>
+        <a href="#about">О студии</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-content">
+        <div class="eyebrow">СТУДИЯ ДИЗАЙНА ИНТЕРЬЕРА</div>
+
+        <h1>Ваш дом —<br>ваша история</h1>
+
+        <p>
+          Создаём пространства, в которых хочется жить.
+          Продумываем каждую деталь, чтобы интерьер
+          отражал ваш характер и образ жизни.
+        </p>
+
+        <a href="#portfolio" class="hero-link">
+          НАШИ ПРОЕКТЫ ↓
+        </a>
+      </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+      <div class="container">
+
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">ИЗБРАННЫЕ РАБОТЫ</div>
+            <h2>Пространства для жизни</h2>
+          </div>
+
+          <p class="section-description">
+            Каждый интерьер — отражение характера
+            и индивидуальности его владельца.
+          </p>
+        </div>
+
+        <div class="projects">
+
+          <article class="project"
+            data-title="Тихая гармония"
+            data-size="Квартира · 85 м²"
+            data-description="Светлая квартира в спокойной природной палитре. Натуральные фактуры, мягкие линии и продуманное освещение создают атмосферу уюта и визуального равновесия.">
+
+            <div class="project-image">
+              <img
+                src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85"
+                alt="Современная гостиная">
+            </div>
+
+            <div class="project-info">
+              <div>
+                <div class="project-number">01 / 04</div>
+                <h3>Тихая гармония</h3>
+                <span>Квартира · 85 м²</span>
+              </div>
+              <span>↗</span>
+            </div>
+          </article>
+
+          <article class="project"
+            data-title="Тепло дерева"
+            data-size="Кухня · 24 м²"
+            data-description="Современное пространство, в котором натуральное дерево сочетается с выразительной фактурой камня. Минималистичная эстетика и функциональность в каждой детали.">
+
+            <div class="project-image">
+              <img
+                src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85"
+                alt="Современный интерьер кухни">
+            </div>
+
+            <div class="project-info">
+              <div>
+                <div class="project-number">02 / 04</div>
+                <h3>Тепло дерева</h3>
+                <span>Кухня · 24 м²</span>
+              </div>
+              <span>↗</span>
+            </div>
+          </article>
+
+          <article class="project"
+            data-title="Место силы"
+            data-size="Спальня · 32 м²"
+            data-description="Приватное пространство для отдыха и восстановления. Приглушённые оттенки, мягкий текстиль и деликатное освещение формируют атмосферу спокойствия.">
+
+            <div class="project-image">
+              <img
+                src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=85"
+                alt="Уютная спальня">
+            </div>
+
+            <div class="project-info">
+              <div>
+                <div class="project-number">03 / 04</div>
+                <h3>Место силы</h3>
+                <span>Спальня · 32 м²</span>
+              </div>
+              <span>↗</span>
+            </div>
+          </article>
+
+          <article class="project"
+            data-title="За городом"
+            data-size="Загородный дом · 160 м²"
+            data-description="Просторный интерьер с панорамным остеклением, естественными оттенками и натуральными материалами. Современный комфорт в гармонии с окружающей природой.">
+
+            <div class="project-image">
+              <img
+                src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85"
+                alt="Интерьер загородного дома">
+            </div>
+
+            <div class="project-info">
+              <div>
+                <div class="project-number">04 / 04</div>
+                <h3>За городом</h3>
+                <span>Дом · 160 м²</span>
+              </div>
+              <span>↗</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+   <section class="about" id="about">
+  <div class="container about-content">
+    <div class="eyebrow">ФИЛОСОФИЯ GLADIO</div>
+
+    <h2>Пространство,
+      <br>в котором есть характер
+    </h2>
+
+    <p>
+      GLADIO — студия дизайна интерьера, создающая
+      пространства с продуманной эстетикой и
+      индивидуальным характером.
+    </p>
+
+    <p>
+      Мы уделяем внимание каждой детали: от общей
+      архитектуры пространства до материалов,
+      освещения и предметов интерьера. Для нас важно,
+      чтобы красота сочеталась с функциональностью,
+      а интерьер отражал образ жизни своего владельца.
+    </p>
+
+    <p>
+      Мы не следуем мимолётным тенденциям.
+      Мы создаём интерьеры, которые остаются
+      актуальными и обретают собственную историю.
+    </p>
+  </div>
+</section>
+  </main>
+
+<section class="contact-section" id="contacts">
+  <div class="container contact-content">
+    <div class="eyebrow">СВЯЗАТЬСЯ С НАМИ</div>
+
+    <h2>давайте создадим
+      <br>что-то особенное
+    </h2>
+
+    <p class="contact-description">
+      Есть идея или проект?
+      Будем рады обсудить ваши пожелания
+      и вместе создать пространство вашей мечты.
+    </p>
+
+    <div class="contact-links">
+      <a href="https://t.me/your_username" target="_blank">
+        TELEGRAM ↗
+      </a>
+
+      <a href="https://www.instagram.com/your_username/"
+         target="_blank">
+        INSTAGRAM ↗
+      </a>
+
+      <a href="mailto:hello@example.com">
+        EMAIL ↗
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <div class="logo">GLADIO</div>
+    <p>Дизайн интерьера · Создаём пространства для жизни</p>
+    <p>© 2026 GLADIO Studio</p>
+  </div>
+</footer>
+
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="modal-content" role="dialog" aria-modal="true" aria-label="Просмотр проекта">
+    <button class="close" id="closeModal" aria-label="Закрыть">×</button>
+
+    <button class="modal-arrow modal-prev" id="prevProject" aria-label="Предыдущий проект">‹</button>
+    <button class="modal-arrow modal-next" id="nextProject" aria-label="Следующий проект">›</button>
+
+    <img id="modalImage" src="" alt="">
+    <div class="modal-text">
+      <h3 id="modalTitle"></h3>
+      <p id="modalDescription"></p>
+      <p id="modalSize"></p>
+    </div>
+    <div class="modal-counter" id="modalCounter" aria-live="polite"></div>
+  </div>
+</div>
+
+
+<script>
+  const modal = document.getElementById("modal");
+  const modalImage = document.getElementById("modalImage");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalSize = document.getElementById("modalSize");
+  const modalDescription = document.getElementById("modalDescription");
+  const modalCounter = document.getElementById("modalCounter");
+
+  const projects = Array.from(document.querySelectorAll(".project"));
+  let currentProject = 0;
+
+  function showProject(index) {
+    currentProject = (index + projects.length) % projects.length;
+
+    const project = projects[currentProject];
+    const image = project.querySelector("img");
+
+    modalImage.src = image.src;
+    modalImage.alt = image.alt;
+    modalTitle.textContent = project.dataset.title;
+    modalSize.textContent = project.dataset.size;
+    modalDescription.textContent = project.dataset.description;
+
+    modalCounter.textContent =
+      String(currentProject + 1).padStart(2, "0") +
+      " / " +
+      String(projects.length).padStart(2, "0");
+  }
+
+  function openModal(index) {
+    showProject(index);
+    modal.classList.add("active");
+    modal.setAttribute("aria-hidden", "false");
+  }
+
+  function closeModal() {
+    modal.classList.remove("active");
+    modal.setAttribute("aria-hidden", "true");
+  }
+
+  projects.forEach((project, index) => {
+    project.addEventListener("click", () => {
+      openModal(index);
+    });
+  });
+
+  document.getElementById("prevProject")
+    .addEventListener("click", () => {
+      showProject(currentProject - 1);
+    });
+
+  document.getElementById("nextProject")
+    .addEventListener("click", () => {
+      showProject(currentProject + 1);
+    });
+
+  document.getElementById("closeModal")
+    .addEventListener("click", closeModal);
+
+  modal.addEventListener("click", event => {
+    if (event.target === modal) closeModal();
+  });
+
+  document.addEventListener("keydown", event => {
+    if (!modal.classList.contains("active")) return;
+
+    if (event.key === "Escape") closeModal();
+    if (event.key === "ArrowLeft") showProject(currentProject - 1);
+    if (event.key === "ArrowRight") showProject(currentProject + 1);
+  });
+</script>
+
+
+</body>
+</html>
